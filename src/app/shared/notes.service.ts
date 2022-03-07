@@ -11,7 +11,12 @@ export class NotesService {
   localItem:string;
 
   constructor() {
-    this.notes=JSON.parse(localStorage.getItem("notes"));
+    if(localStorage.getItem("notes")==null){
+      this.notes=[];
+    }
+    else{
+      this.notes=JSON.parse(localStorage.getItem("notes"));
+    }
    }
 
   get(id:number){

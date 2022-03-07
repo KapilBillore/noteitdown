@@ -330,7 +330,12 @@ __webpack_require__.r(__webpack_exports__);
 class NotesService {
     constructor() {
         this.notes = new Array();
-        this.notes = JSON.parse(localStorage.getItem("notes"));
+        if (localStorage.getItem("notes") == null) {
+            this.notes = [];
+        }
+        else {
+            this.notes = JSON.parse(localStorage.getItem("notes"));
+        }
     }
     get(id) {
         return this.notes[id];
