@@ -1,0 +1,17 @@
+<div #container class="note-card-container">
+
+  <a [routerLink]="link" style="text-decoration: none;">
+    <div class="note-card-content">
+      <h3 class="note-card-title">{{ title }}</h3>
+
+      <div class="note-card-body">
+        {{ body}}
+      </div>
+    </div>
+
+  </a>
+
+
+    <div class="x-button" (click)="onXButtonClick()"></div>
+
+</div>

@@ -1,0 +1,21 @@
+<div class="main-container">
+  <div class="search-bar-container">
+
+    <div class="input-group rounded">
+      <input type="text" class=" input form-control rounded" placeholder="Filter" (input)="filter($event.target.value)">
+      <span class="input-group-text border-0" id="search-addon">
+        <i class="fas fa-search"></i>
+      </span>
+    </div>
+
+  </div>
+
+  <div class="notes-list">
+    <app-note-card *ngFor="let note of filteredNotes; index as i" [title]="note.title" [body]="note.body" [link]="i"
+      (delete)="deleteNote(i)">
+    </app-note-card>
+
+  </div>
+
+  <button class="btn  floating-add-button" routerLink="/new">+Add</button>
+</div>
